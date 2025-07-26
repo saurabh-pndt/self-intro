@@ -1,23 +1,280 @@
-<!-- ... same as before ... -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe | Professional Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="profile">
+                <img src="profile.jpg" alt="John Doe" class="profile-img">
+                <h1>John Doe</h1>
+                <p class="title">Senior Web Developer</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about" class="active">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<div class="socials">
-  <button onclick="showPortfolio()">🌐 Portfolio</button>
-  <button onclick="showContact()">📞 Contact</button>
-</div>
+    <main class="container">
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>I'm a passionate web developer with over 5 years of experience creating responsive and user-friendly websites. I specialize in front-end development with expertise in React, JavaScript, and modern CSS frameworks. I'm dedicated to writing clean, efficient code and staying up-to-date with the latest web technologies.</p>
+            <div class="about-details">
+                <div>
+                    <p><strong>Location:</strong> San Francisco, CA</p>
+                    <p><strong>Phone:</strong> (123) 456-7890</p>
+                </div>
+                <div>
+                    <p><strong>Email:</strong> john.doe@example.com</p>
+                    <p><strong>Freelance:</strong> Available</p>
+                </div>
+            </div>
+            <a href="resume.pdf" class="btn" download>Download CV</a>
+        </section>
 
-<!-- 🔴 Hidden Portfolio Section -->
-<div id="portfolio-section" class="hidden portfolio-box">
-  <h2>💼 My Projects</h2>
-  <ul>
-    <li><strong>Personal Website</strong> – A responsive self intro website using HTML, CSS, JS.</li>
-    <li><strong>AI Tools Blog</strong> – Blog showcasing latest AI tools and automation ideas.</li>
-    <li><strong>Logic Puzzle Game</strong> – Web-based game using JavaScript logic.</li>
-  </ul>
-</div>
+        <section id="experience" class="section">
+            <h2>Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2020 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Senior Web Developer</h3>
+                        <p class="company">Tech Solutions Inc.</p>
+                        <ul>
+                            <li>Lead a team of 5 developers to build responsive web applications</li>
+                            <li>Implemented React hooks and context API to improve performance</li>
+                            <li>Reduced page load time by 40% through code optimization</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2017 - 2020</div>
+                    <div class="timeline-content">
+                        <h3>Web Developer</h3>
+                        <p class="company">Digital Creations LLC</p>
+                        <ul>
+                            <li>Developed and maintained 20+ client websites</li>
+                            <li>Created custom WordPress themes and plugins</li>
+                            <li>Improved SEO rankings for all client websites</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2015 - 2017</div>
+                    <div class="timeline-content">
+                        <h3>Junior Developer</h3>
+                        <p class="company">WebStart Solutions</p>
+                        <ul>
+                            <li>Assisted in building and testing web applications</li>
+                            <li>Fixed bugs and implemented new features</li>
+                            <li>Learned modern web development practices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<p id="phone-number" class="hidden">📱 +91 9876543210</p>
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2011 - 2015</div>
+                    <div class="timeline-content">
+                        <h3>Bachelor of Science in Computer Science</h3>
+                        <p class="company">University of California, Berkeley</p>
+                        <p>Graduated with honors. Specialized in Web Technologies and Human-Computer Interaction.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2015</div>
+                    <div class="timeline-content">
+                        <h3>Full Stack Web Development Certification</h3>
+                        <p class="company">freeCodeCamp</p>
+                        <p>Completed 300-hour coding curriculum covering front-end and back-end technologies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- Include script -->
-<script src="script.js"></script>
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill">
+                        <p>HTML/CSS</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>JavaScript</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>React</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill">
+                        <p>Node.js</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>Python</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>PHP</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <div class="skill">
+                        <p>Git</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>Webpack</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <p>Figma</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="project1.jpg" alt="E-commerce Platform">
+                    <div class="project-info">
+                        <h3>E-commerce Platform</h3>
+                        <p>Full-featured online store with React, Node.js, and MongoDB</p>
+                        <div class="project-links">
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="project2.jpg" alt="Task Management App">
+                    <div class="project-info">
+                        <h3>Task Management App</h3>
+                        <p>Kanban-style productivity application with drag-and-drop functionality</p>
+                        <div class="project-links">
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="project3.jpg" alt="Weather Dashboard">
+                    <div class="project-info">
+                        <h3>Weather Dashboard</h3>
+                        <p>Real-time weather application with 5-day forecast using API integration</p>
+                        <div class="project-links">
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Get In Touch</h2>
+            <div class="contact-container">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>San Francisco, CA</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>john.doe@example.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>(123) 456-7890</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> John Doe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
