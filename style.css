@@ -1,0 +1,34 @@
+/* ... existing CSS ... */
+
+.hidden {
+  display: none;
+}
+
+.portfolio-box {
+  margin-top: 20px;
+  background: #f3f3f3;
+  padding: 20px;
+  border-left: 5px solid #0072ff;
+  border-radius: 10px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.portfolio-box h2 {
+  color: #0072ff;
+  margin-bottom: 10px;
+}
+
+.portfolio-box ul {
+  list-style: none;
+}
+
+.portfolio-box ul li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Optional fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
