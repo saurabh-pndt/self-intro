@@ -3,278 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Doe | Professional Resume</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Color Matching Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .game-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .color-display {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 10px;
+            border: 2px dashed #ccc;
+        }
+        .color-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .color-option {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .color-option:hover {
+            transform: scale(1.05);
+        }
+        .score {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .timer {
+            font-size: 18px;
+            color: #e74c3c;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="profile">
-                <img src="profile.jpg" alt="John Doe" class="profile-img">
-                <h1>John Doe</h1>
-                <p class="title">Senior Web Developer</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#about" class="active">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+    <div class="game-container">
+        <h1>Color Matching Game</h1>
+        <div class="score">Score: <span id="score">0</span></div>
+        <div class="timer">Time left: <span id="time">30</span>s</div>
+        <div class="color-display" id="colorDisplay">Color Name</div>
+        <div class="color-options" id="colorOptions">
+            <!-- Color options will be generated here -->
         </div>
-    </header>
+        <button id="startBtn">Start Game</button>
+    </div>
 
-    <main class="container">
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <p>I'm a passionate web developer with over 5 years of experience creating responsive and user-friendly websites. I specialize in front-end development with expertise in React, JavaScript, and modern CSS frameworks. I'm dedicated to writing clean, efficient code and staying up-to-date with the latest web technologies.</p>
-            <div class="about-details">
-                <div>
-                    <p><strong>Location:</strong> San Francisco, CA</p>
-                    <p><strong>Phone:</strong> (123) 456-7890</p>
-                </div>
-                <div>
-                    <p><strong>Email:</strong> 00saurabhk@gmail.com</p>
-                    <p><strong>Freelance:</strong> Available</p>
-                </div>
-            </div>
-            <a href="resume.pdf" class="btn" download>Download CV</a>
-        </section>
+    <script>
+        const colors = [
+            {name: "Red", hex: "#e74c3c"},
+            {name: "Blue", hex: "#3498db"},
+            {name: "Green", hex: "#2ecc71"},
+            {name: "Yellow", hex: "#f1c40f"},
+            {name: "Purple", hex: "#9b59b6"},
+            {name: "Orange", hex: "#e67e22"},
+            {name: "Pink", hex: "#ff9ff3"},
+            {name: "Brown", hex: "#a04000"},
+            {name: "Black", hex: "#000000"},
+            {name: "White", hex: "#ffffff"}
+        ];
 
-        <section id="experience" class="section">
-            <h2>Work Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2020 - Present</div>
-                    <div class="timeline-content">
-                        <h3>Senior Web Developer</h3>
-                        <p class="company">Tech Solutions Inc.</p>
-                        <ul>
-                            <li>Lead a team of 5 developers to build responsive web applications</li>
-                            <li>Implemented React hooks and context API to improve performance</li>
-                            <li>Reduced page load time by 40% through code optimization</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2017 - 2020</div>
-                    <div class="timeline-content">
-                        <h3>Web Developer</h3>
-                        <p class="company">Digital Creations LLC</p>
-                        <ul>
-                            <li>Developed and maintained 20+ client websites</li>
-                            <li>Created custom WordPress themes and plugins</li>
-                            <li>Improved SEO rankings for all client websites</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2015 - 2017</div>
-                    <div class="timeline-content">
-                        <h3>Junior Developer</h3>
-                        <p class="company">WebStart Solutions</p>
-                        <ul>
-                            <li>Assisted in building and testing web applications</li>
-                            <li>Fixed bugs and implemented new features</li>
-                            <li>Learned modern web development practices</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+        let score = 0;
+        let timeLeft = 30;
+        let timer;
+        let currentColor;
+        let correctIndex;
+        let gameActive = false;
 
-        <section id="education" class="section">
-            <h2>Education</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2011 - 2015</div>
-                    <div class="timeline-content">
-                        <h3>Bachelor of Science in Computer Science</h3>
-                        <p class="company">University of California, Berkeley</p>
-                        <p>Graduated with honors. Specialized in Web Technologies and Human-Computer Interaction.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2015</div>
-                    <div class="timeline-content">
-                        <h3>Full Stack Web Development Certification</h3>
-                        <p class="company">freeCodeCamp</p>
-                        <p>Completed 300-hour coding curriculum covering front-end and back-end technologies.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        const colorDisplay = document.getElementById('colorDisplay');
+        const colorOptions = document.getElementById('colorOptions');
+        const scoreElement = document.getElementById('score');
+        const timeElement = document.getElementById('time');
+        const startBtn = document.getElementById('startBtn');
 
-        <section id="skills" class="section">
-            <h2>Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <div class="skill">
-                        <p>HTML/CSS</p>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 95%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <p>JavaScript</p>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <p>React</p>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 85%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <div class="skill">
-                        <p>Node.js</p>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <p>Python</p>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <p>PHP</p>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 70%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools</h3>
-                    <div class="skill">
-                        <p>Git</p>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <p>Webpack</p>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <p>Figma</p>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 65%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        function startGame() {
+            score = 0;
+            timeLeft = 30;
+            gameActive = true;
+            scoreElement.textContent = score;
+            timeElement.textContent = timeLeft;
+            startBtn.disabled = true;
+            
+            // Start timer
+            timer = setInterval(() => {
+                timeLeft--;
+                timeElement.textContent = timeLeft;
+                
+                if (timeLeft <= 0) {
+                    endGame();
+                }
+            }, 1000);
+            
+            // Generate first round
+            generateRound();
+        }
 
-        <section id="projects" class="section">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="project1.jpg" alt="E-commerce Platform">
-                    <div class="project-info">
-                        <h3>E-commerce Platform</h3>
-                        <p>Full-featured online store with React, Node.js, and MongoDB</p>
-                        <div class="project-links">
-                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="#"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="project2.jpg" alt="Task Management App">
-                    <div class="project-info">
-                        <h3>Task Management App</h3>
-                        <p>Kanban-style productivity application with drag-and-drop functionality</p>
-                        <div class="project-links">
-                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="#"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="project3.jpg" alt="Weather Dashboard">
-                    <div class="project-info">
-                        <h3>Weather Dashboard</h3>
-                        <p>Real-time weather application with 5-day forecast using API integration</p>
-                        <div class="project-links">
-                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="#"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        function endGame() {
+            gameActive = false;
+            clearInterval(timer);
+            startBtn.disabled = false;
+            colorDisplay.textContent = "Game Over!";
+            colorOptions.innerHTML = "";
+        }
 
-        <section id="contact" class="section">
-            <h2>Get In Touch</h2>
-            <div class="contact-container">
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Location</h3>
-                            <p>San Francisco, CA</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p>john.doe@example.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3>Phone</h3>
-                            <p>(123) 456-7890</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+        function generateRound() {
+            // Clear previous options
+            colorOptions.innerHTML = "";
+            
+            // Select a random color name (might not match the actual color)
+            const colorNames = colors.map(color => color.name);
+            currentColor = colorNames[Math.floor(Math.random() * colorNames.length)];
+            colorDisplay.textContent = currentColor;
+            colorDisplay.style.color = "#333"; // Reset text color
+            
+            // Shuffle colors and pick 4 options (including the correct one)
+            const shuffledColors = [...colors].sort(() => 0.5 - Math.random());
+            const options = shuffledColors.slice(0, 4);
+            
+            // Make sure the correct color is in the options
+            const correctColor = colors.find(c => c.name === currentColor);
+            if (!options.some(c => c.name === currentColor)) {
+                options[Math.floor(Math.random() * 4)] = correctColor;
+            }
+            
+            // Find the index of the correct answer
+            correctIndex = options.findIndex(c => c.name === currentColor);
+            
+            // Create color option elements
+            options.forEach((color, index) => {
+                const colorDiv = document.createElement('div');
+                colorDiv.className = 'color-option';
+                colorDiv.style.backgroundColor = color.hex;
+                colorDiv.dataset.index = index;
+                colorDiv.addEventListener('click', () => checkAnswer(index));
+                colorOptions.appendChild(colorDiv);
+            });
+        }
 
-    <footer>
-        <div class="container">
-            <p>&copy; <span id="year"></span> John Doe. All rights reserved.</p>
-        </div>
-    </footer>
+        function checkAnswer(selectedIndex) {
+            if (!gameActive) return;
+            
+            if (selectedIndex === correctIndex) {
+                score++;
+                scoreElement.textContent = score;
+                colorDisplay.style.color = colors.find(c => c.name === currentColor).hex;
+                setTimeout(generateRound, 1000);
+            } else {
+                // Flash red for wrong answer
+                document.body.style.backgroundColor = "#ffdddd";
+                setTimeout(() => {
+                    document.body.style.backgroundColor = "#f0f0f0";
+                }, 200);
+            }
+        }
 
-    <script src="script.js"></script>
+        startBtn.addEventListener('click', startGame);
+    </script>
 </body>
 </html>
